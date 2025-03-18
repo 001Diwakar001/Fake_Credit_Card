@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h2>Credit Card Fraud Detection</h2>
+    <form action="/predict" method="post">
+        <label for="features">Enter 30 numerical values (comma-separated):</label><br>
+        <input type="text" name="features" id="features" required placeholder="e.g. 0.12, -0.34, 1.56, ..."><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+
+</body>
+</html>
